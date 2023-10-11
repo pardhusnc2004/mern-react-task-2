@@ -60,12 +60,13 @@ export class Calculator extends Component{
             <div class="custom-container">
                 <div class="row">
                     <div class="col-sm-12 text-dark" style={{minHeight: "270px", textAlign: "right", backgroundColor: "#172d67"}}>
-                            <h5 className="text-secondary">History Log</h5>
+                            <h5 className="text-primary">History Log</h5>
                             {this.state.history.reverse().map((item, index) => (
                                 <h6 className="text-light">{item}</h6>
                             ))}
+                            <div className="bottom-div mt-0 col-sm-12 text-light"  style={{backgroundColor: "#172d67"}}><h6>{this.state.expression}</h6></div>
                     </div>
-                    <div className="bottom-div mt-0 col-sm-12 text-light"  style={{backgroundColor: "#172d67"}}><h6>{this.state.expression}</h6></div>
+                    <h5 className="mb-0 text-light" style={{backgroundColor: "#172d67"}}>{this.state.expression}</h5>
                 </div>
                 <div class="row" style={{width: "330px"}}>
                     <div class="col-sm-3 btn btn-dark text-light text-center p-4 effect" onClick={this.add_to_expression} id = "7">7</div>
@@ -82,8 +83,9 @@ export class Calculator extends Component{
                     <div class="col-sm-3 btn btn-dark text-light text-center p-4 effect" onClick={this.add_to_expression} id = "*">x</div>
                     <div class="col-sm-3 btn btn-dark text-light text-center p-4 effect" onClick={this.add_to_expression} id = "0">0</div>
                     <div class="col-sm-3 btn btn-dark text-light text-center p-4 effect" onClick={this.add_to_expression} id = ".">.</div>
-                    <div class="col-sm-3 btn btn-dark text-light text-center p-4 effect" onClick={this.evaluate_expression} id = "=">=</div>
-                    <div class="col-sm-3 btn btn-dark text-light text-center p-4 effect" onClick={this.add_to_expression} id = "+">+</div>
+                    <div class="col-sm-2 btn btn-dark text-light text-center p-4 effect" onClick={this.add_to_expression} id="-">-</div>
+                    <div class="col-sm-2 btn btn-dark text-light text-center p-4 effect" onClick={this.add_to_expression} id = "+">+</div>
+                    <div class="col-sm-2 btn btn-dark text-light text-center p-4 effect" onClick={this.evaluate_expression} id = "=">=</div>
                 </div>
             </div>
         )
